@@ -28,7 +28,7 @@ The goal was to create a fast, minimal, and scalable landing page structure that
 
 ## Live Demo
 
-[\[Insert your Vercel link here\]](https://fitness-landing-page-flame.vercel.app)
+[\[Vercel link\]](https://fitness-landing-page-flame.vercel.app)
 
 ## Use Case
 
