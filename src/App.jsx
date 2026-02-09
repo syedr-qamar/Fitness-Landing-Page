@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="min-h-screen bg-gradient-to-b from-white to-slate-50 text-slate-900">
       <Header />
       <main>
         <Hero />
@@ -20,16 +20,35 @@ function Header() {
       <div className="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
         <div className="font-bold tracking-tight">NovaFit</div>
         <nav className="hidden md:flex gap-6 text-sm text-slate-600">
-          <a href="#services" className="hover:text-slate-900">Services</a>
-          <a href="#results" className="hover:text-slate-900">Results</a>
-          <a href="#contact" className="hover:text-slate-900">Contact</a>
+
+          <a
+           href="#services"
+           className="text-sm text-slate-600 hover:text-slate-900 transition focus:outline-none focus:ring-2 focus:ring-slate-300 focus:ring-offset-2 rounded"          
+          >
+              Services
+          </a>
+
+          <a 
+            href="#results"
+            className="text-sm text-slate-600 hover:text-slate-900 transition focus:outline-none focus:ring-2 focus:ring-slate-300 focus:ring-offset-2 rounded"          >
+            Results
+          </a>
+
+          <a 
+            href="#contact" 
+            className="text-sm text-slate-600 hover:text-slate-900 transition focus:outline-none focus:ring-2 focus:ring-slate-300 focus:ring-offset-2 rounded"          >
+            Contact
+          </a>
+
         </nav>
+
         <a
           href="#contact"
           className="inline-flex items-center rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800"
         >
           Book a call
         </a>
+
       </div>
     </header>
   );
@@ -48,7 +67,8 @@ function Hero() {
           </h1>
           <p className="mt-4 text-slate-600 leading-relaxed">
             A simple coaching plan built around your schedule. Weekly check-ins,
-            workouts you can follow, and nutrition you’ll actually stick to.
+            workouts you can follow, and nutrition you’ll actually stick to. Get your fitness
+            journey started today!
           </p>
 
           <div className="mt-7 flex flex-col sm:flex-row gap-3">
@@ -104,14 +124,14 @@ function CardStat({ label, value }) {
 function Section() {
   return (
     <section id="services" className="mx-auto max-w-6xl px-4 pb-16">
-      <h2 className="text-2xl font-bold tracking-tight">Services</h2>
+      <h2 className="text-3xl font-bold tracking-tight">Services</h2>
       <p className="mt-2 text-slate-600">
         Pick a plan. We’ll tailor everything to your goal and your schedule.
       </p>
 
       <div className="mt-8 grid gap-4 md:grid-cols-3">
-        <ServiceCard title="Starter" desc="2 workouts/week + monthly check-in." />
-        <ServiceCard title="Standard" desc="3 workouts/week + weekly check-ins." />
+        <ServiceCard title="Starter" desc="3 workouts/week + monthly check-in." />
+        <ServiceCard title="Standard" desc="5 workouts/week + weekly check-ins." />
         <ServiceCard title="Premium" desc="Custom plan + nutrition + priority support." />
       </div>
     </section>
@@ -124,7 +144,7 @@ function Results() {
       <div className="rounded-2xl border bg-white p-8 md:p-10">
         <div className="grid gap-8 md:grid-cols-2 md:items-center">
           <div>
-            <h2 className="text-2xl font-bold tracking-tight">Results that feel real</h2>
+            <h2 className="text-3xl font-bold tracking-tight">Results that feel real</h2>
             <p className="mt-3 text-slate-600 leading-relaxed">
               You’ll follow a simple plan you can repeat. No extreme diets. No confusing
               workouts. Just consistency you can maintain.
@@ -191,6 +211,26 @@ function ServiceCard({ title, desc }) {
   );
 }
 
+function MobileCTA() {
+  return (
+    <div className="md:hidden fixed bottom-0 left-0 right-0 border-t bg-white/90 backdrop-blur">
+      <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+        <div className="text-sm">
+          <div className="font-semibold">Free starter plan</div>
+          <div className="text-xs text-slate-600">Takes 30 seconds</div>
+        </div>
+        <a
+          href="#contact"
+          className="rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800 transition"
+        >
+          Get it
+        </a>
+      </div>
+    </div>
+  );
+}
+
+
 function Footer() {
   const [sent, setSent] = useState(false);
 
@@ -204,7 +244,7 @@ function Footer() {
           </p>
           {sent && (
             <p className="mt-3 text-sm font-medium text-emerald-700">
-              ✅ Thanks! Your message has been sent.
+              Thanks! Your message has been sent.
             </p>
           )}
         </div>
@@ -239,6 +279,7 @@ function Footer() {
           © {new Date().getFullYear()} NovaFit. All rights reserved.
         </p>
       </div>
+      <MobileCTA />
     </footer>
   );
 }
