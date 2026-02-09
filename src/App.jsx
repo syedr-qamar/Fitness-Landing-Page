@@ -8,6 +8,7 @@ export default function App() {
       <Header />
       <main>
         <Hero />
+        <TransformBanner />
         <Section onPlanSelect={setSelectedPlan} />
         <Results />
       </main>
@@ -211,6 +212,22 @@ function Hero() {
         </div>
       </div>
     </section>
+  );
+}
+
+function TransformBanner() {
+  return (
+    <Reveal delay={40}>
+      <section aria-label="Transform Yourself Banner" className="w-full pb-14 md:pb-20">
+        <div className="mx-auto w-full max-w-[1920px] aspect-[3/2] md:aspect-[1920/780] overflow-hidden">
+          <img
+            src="/transform-yourself.png"
+            alt="Transform yourself with NovaFit coaching"
+            className="h-full w-full object-cover"
+          />
+        </div>
+      </section>
+    </Reveal>
   );
 }
 
